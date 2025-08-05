@@ -1,0 +1,50 @@
+.--docs-container {
+    width: 100%;
+    padding: 2rem 0;
+    background-color: var(--color-dark);
+}
+
+.--docs-container .--title {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--color-white);
+}
+
+.--docs-container .--box {
+    width: 60%;
+    margin: auto;
+    padding: 1rem;
+    border-radius: 20px;
+    color: var(--color-white);
+    background-color: #252525;
+}
+
+.--docs-container .--box .--section-box {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.--docs-container .--box .--section-box .--section-tti {
+    font-size: 1.5rem;
+    margin-bottom: .8rem;
+}
+
+.--docs-container .--box .--section-box .--section-txt {
+    font-size: .8rem;
+    margin-bottom: 1rem;
+    color: var(--color-gray);
+}
+
+.--docs-container .--box .--section-box .--section-sandbox {
+    width: 100%;
+    display: flex;
+    padding: 1rem;
+    gap: 2rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    background-color: var(--color-dark);
+}
+
+.--docs-container .--box .--section-box .--section-sandbox .--col {
+    width: 100%;
+}

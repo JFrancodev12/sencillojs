@@ -1,0 +1,40 @@
+.--header {
+    width: 100%;
+    display: flex;
+    padding: 0 1rem;
+    align-items: center;
+    height: var(--header-height);
+    justify-content: space-between;
+    background-color: var(--color-dark);
+}
+
+.--header .--col {
+    display: flex;
+    height: inherit;
+    align-items: center;
+}
+
+.--header .--col-A {
+    gap: 1rem;
+}
+
+.--header .--col .--img-logo {
+    width: 45px;
+    height: 45px;
+}
+
+.--header .--col-A span {
+    color: var(--color-white);
+}
+
+.--header .--col-A h4 {
+    color: var(--color-white);
+}
+
+.--header .--col-A .--link {
+    color: var(--color-white);
+}
+
+.--header .--col .--btn-share {
+    padding: .5rem 1rem;
+}

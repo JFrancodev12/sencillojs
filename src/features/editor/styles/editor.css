@@ -1,0 +1,47 @@
+.--box-editor {
+    width: 100dvw;
+    height: calc(100dvh - var(--header-height));
+    display: flex;
+}
+
+.--box-editor .--editor {
+    width: 400px;
+    height: 100%;
+}
+
+.--box-editor .--log {
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-dark);
+}
+
+.--box-editor .--log .--log-header {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    padding: 0 1rem;
+    align-items: center;
+    border-bottom: 2px solid #252525;
+}
+
+.--box-editor .--log .--log-header .--btn-run {
+    display: flex;
+    gap: .5rem;
+    padding: .5rem 1rem;
+    align-items: center;
+    border-radius: 5px;
+    color: var(--color-white);
+    background-color: #252525;
+}
+
+.--box-editor .--log .--log-header .--btn-run .tabler-icon {
+    fill: #009c0a;
+}
+
+.--box-editor .--log .--log-body {
+    padding: 1rem;
+}
+
+.--box-editor .--log .--log-body pre {
+    color: var(--color-white);
+}
