@@ -1,37 +1,21 @@
-import { useState } from "react";
 import { Editor } from "@monaco-editor/react";
-import { ejecutarCodigo } from "./core/runtime";
-import { IconPlayerPlayFilled } from "@tabler/icons-react";
+import { useEditCode } from "./context/EditorContext";
+
+import { useUI } from "../../shared/context/UIContext";
 
 import './styles/editor.css'
 
 export default function EditorLayout () {
 
-    const [codigo, setCodigo] = useState('mostrar("Hola, mundo");');
-    const [salida, setSalida] = useState("");
-    const [ run, setRun ] = useState(false);
-
-    const ejecutar = () => {
-        try {
-            setRun(true);
-            const { resultado, error } = ejecutarCodigo(codigo);
-            setSalida(error || resultado || "❌ No se ejecutó");
-        } catch (error) {
-            console.log(error);
-        } finally {
-            setRun(false);
-        }
-    };
+    const { theme } = useUI();
+    const { code, output, run, handleChangeCode } = useEditCode();
 
     return (
 
         <main className="--box-editor">
-            <Editor defaultLanguage="javascript" theme="vs-dark" value={codigo} className="--editor" onChange={(value) => setCodigo(value || "")} />
+            <Editor defaultLanguage="javascript" theme={`vs-${theme}`} value={code} className="--editor" onChange={(value) => handleChangeCode(value || "")} />
             <div className="--log">
-                <div className="--log-header">
-                    <button className="--btn --btn-run" onClick={ejecutar}><IconPlayerPlayFilled/> Ejecutar</button>
-                </div>
-                <div className="--log-body"><pre>{run ? 'Ejecutando...' : salida}</pre></div>
+                <div className="--log-body"><pre>{run ? 'Ejecutando...' : output}</pre></div>
             </div>
         </main>
 

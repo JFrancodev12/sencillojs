@@ -48,6 +48,7 @@ const reglas = [
 ];
 
 export function traducir(codigo) {
+
     let resultado = codigo;
 
     for (const regla of reglas) {

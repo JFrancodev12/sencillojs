@@ -5,7 +5,7 @@
     align-items: center;
     height: var(--header-height);
     justify-content: space-between;
-    background-color: var(--color-dark);
+    background-color: var(--color-bg);
 }
 
 .--header .--col {
@@ -24,17 +24,36 @@
 }
 
 .--header .--col-A span {
-    color: var(--color-white);
+    color: var(--color-text);
 }
 
 .--header .--col-A h4 {
-    color: var(--color-white);
+    color: var(--color-text);
 }
 
 .--header .--col-A .--link {
-    color: var(--color-white);
+    color: var(--color-text);
 }
 
-.--header .--col .--btn-share {
+.--header .--col-B {
+    gap: 1rem;
+}
+
+.--header .--col-B .--btn {
+    display: flex;
+    align-items: center;
     padding: .5rem 1rem;
+    gap: .8rem;
+    color: var(--color-text);
+    background-color: var(--color-bg-secondary);
+}
+
+.--header .--col-B .--btn .tabler-icon {
+    width: 18px;
+    height: 18px;
+    fill: var(--color-text);
+}
+
+.--header .--col-B .--btn-execute .tabler-icon {
+    fill: var(--color-success);
 }

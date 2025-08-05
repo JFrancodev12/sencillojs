@@ -1,5 +1,8 @@
 import { toast, Toaster } from "sonner";
+import { IconMoon, IconPlayerPlayFilled, IconSun } from "@tabler/icons-react";
 import { Outlet, useLocation } from "react-router-dom";
+import { useUI } from "../shared/context/UIContext";
+import { useEditCode } from "./editor/context/EditorContext";
 
 import logo from '../shared/img/logo.svg'
 import './styles/layout.css'
@@ -7,6 +10,9 @@ import './styles/layout.css'
 export default function RootLayout () {
 
     const location = useLocation();
+
+    const { theme, handleChangeTheme } = useUI();
+    const { handleRunCode } = useEditCode();
 
     const handleShare = async () => {
         const texto = `🚀 Aprende a programar en español con SencilloJS: \n${window.location.origin}`;
@@ -34,8 +40,10 @@ export default function RootLayout () {
                         <a href="/" className="--link" target="_blank">Editor</a>
                     )}
                 </div>
-                <div className="--col">
+                <div className="--col --col-B">
+                    <button className="--btn --btn-execute" onClick={handleRunCode}> <IconPlayerPlayFilled/> Ejecutar</button>
                     <button className="--btn --btn-share" onClick={handleShare}>Compartir</button>
+                    <button className="--btn --btn-theme" onClick={handleChangeTheme}>{theme === 'dark' ? <IconMoon/> : <IconSun/>}</button>
                 </div>
             </header>
 
