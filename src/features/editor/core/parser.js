@@ -37,8 +37,14 @@ const reglas = [
 
     // Booleanos
     { nombre: "true", regex: /verdadero/g, reemplazo: 'true' },
-    { nombre: "false", regex: /falso/g, reemplazo: 'false' }
+    { nombre: "false", regex: /falso/g, reemplazo: 'false' },
 
+    // PROMPT
+    {
+        nombre: "entrada",
+        regex: /entrada\((.*?)\);?/g,
+        reemplazo: 'prompt($1);'
+    }
 ];
 
 export function traducir(codigo) {
