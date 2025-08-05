@@ -1,56 +1,43 @@
 const reglas = [
 
-    // 📌 Variables
+    // Variables constantes
     {
-        nombre: "declaracion_variable",
+        nombre: "constante",
         regex: /variable\s+(\w+)\s*=\s*(.*?);/g,
         reemplazo: 'const $1 = $2;'
     },
 
-    // 📌 Funciones
+    // Variables modificables
     {
-        nombre: "declaracion_funcion",
-        regex: /funcion\s+(\w+)\((.*?)\)/g,
-        reemplazo: 'function $1($2)'
+        nombre: "variable",
+        regex: /cambiar\s+(\w+)\s*=\s*(.*?);/g,
+        reemplazo: 'let $1 = $2;'
     },
 
-    // 📌 Condicionales
-    {
-        nombre: "si",
-        regex: /si\s*\((.*?)\)/g,
-        reemplazo: 'if ($1)'
-    },
-    {
-        nombre: "sino",
-        regex: /sino/g,
-        reemplazo: 'else'
-    },
-
-    // 📌 Bucles
-    {
-        nombre: "mientras",
-        regex: /mientras\s*\((.*?)\)/g,
-        reemplazo: 'while ($1)'
-    },
-
-    // 📌 Mostrar
+    // Mostrar
     {
         nombre: "mostrar",
         regex: /mostrar\((.*?)\);?/g,
         reemplazo: 'console.log($1);'
     },
 
-    // 📌 Booleanos
+    // Condicionales
+    { nombre: "si", regex: /si\s*\((.*?)\)/g, reemplazo: 'if ($1)' },
+    { nombre: "sino", regex: /sino/g, reemplazo: 'else' },
+
+    // Bucles
+    { nombre: "mientras", regex: /mientras\s*\((.*?)\)/g, reemplazo: 'while ($1)' },
+
+    // Funciones
     {
-        nombre: "booleano_verdadero",
-        regex: /verdadero/g,
-        reemplazo: 'true'
+        nombre: "funcion",
+        regex: /funcion\s+(\w+)\((.*?)\)/g,
+        reemplazo: 'function $1($2)'
     },
-    {
-        nombre: "booleano_falso",
-        regex: /falso/g,
-        reemplazo: 'false'
-    }
+
+    // Booleanos
+    { nombre: "true", regex: /verdadero/g, reemplazo: 'true' },
+    { nombre: "false", regex: /falso/g, reemplazo: 'false' }
 
 ];
 
