@@ -3,8 +3,8 @@ export const docSections = [
         titulo: "1. Variables",
         descripcion: "Usa 'variable' para declarar una constante.",
         ejemplos: [
-            { codigo: "variable edad = 21;", traduccion: "const edad = 21;" },
-            { codigo: 'variable nombre = "Franco";', traduccion: 'const nombre = "Franco";' }
+            { codigo: "variable edad = 21;", traduccion: "let edad = 21;" },
+            { codigo: 'constante nombre = "Franco";', traduccion: 'const nombre = "Franco";' }
         ]
     },
     {
