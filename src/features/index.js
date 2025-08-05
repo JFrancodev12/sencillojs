@@ -1,3 +1,4 @@
+import { toast, Toaster } from "sonner";
 import { Outlet, useLocation } from "react-router-dom";
 
 import logo from '../shared/img/logo.svg'
@@ -6,6 +7,17 @@ import './styles/layout.css'
 export default function RootLayout () {
 
     const location = useLocation();
+
+    const handleShare = async () => {
+        const texto = `🚀 Aprende a programar en español con SencilloJS: \n${window.location.origin}`;
+        try {
+            await navigator.clipboard.writeText(texto);
+            toast.success('Se copió para compartir')
+        } catch (err) {
+            console.error("❌ No se pudo copiar", err);
+            toast.error("❌ No se pudo copiar")
+        }
+    };
 
     return (
 
@@ -23,11 +35,13 @@ export default function RootLayout () {
                     )}
                 </div>
                 <div className="--col">
-                    <button className="--btn --btn-share">Compartir</button>
+                    <button className="--btn --btn-share" onClick={handleShare}>Compartir</button>
                 </div>
             </header>
 
             <Outlet/>
+
+            <Toaster position="top-center" duration={2000} richColors />
 
         </>
 
