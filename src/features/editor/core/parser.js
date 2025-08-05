@@ -3,14 +3,14 @@ const reglas = [
     // Variables constantes
     {
         nombre: "constante",
-        regex: /variable\s+(\w+)\s*=\s*(.*?);/g,
+        regex: /constante\s+(\w+)\s*=\s*(.*?);/g,
         reemplazo: 'const $1 = $2;'
     },
 
     // Variables modificables
     {
         nombre: "variable",
-        regex: /cambiar\s+(\w+)\s*=\s*(.*?);/g,
+        regex: /variable\s+(\w+)\s*=\s*(.*?);/g,
         reemplazo: 'let $1 = $2;'
     },
 
