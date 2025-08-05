@@ -1,7 +1,7 @@
 export const docSections = [
     {
         titulo: "1. Variables",
-        descripcion: "Usa 'variable' para declarar una constante.",
+        descripcion: "Usa 'variable' para declarar un let y 'constante' para declarar un const.",
         ejemplos: [
             { codigo: "variable edad = 21;", traduccion: "let edad = 21;" },
             { codigo: 'constante nombre = "Franco";', traduccion: 'const nombre = "Franco";' }
